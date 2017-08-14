@@ -64,3 +64,9 @@ app.get('/bad', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is up at port ${port}`);
 });
+
+app.get(/^\/test\/(\\d+)\/$/, (req, res) => {
+  res.send({
+    id: req.params[0]
+  });
+});
